@@ -1,10 +1,13 @@
+let j = 0
 let list: number[] = []
 let n = 0
-let j = 0
 let a = 0
 let x = 0
 let y = 0
 input.onButtonPressed(Button.A, function () {
+    j = j + 1
+})
+input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
     list = []
     for (let index = 0; index < 25; index++) {
@@ -20,9 +23,6 @@ input.onButtonPressed(Button.A, function () {
         }
     }
 })
-input.onButtonPressed(Button.AB, function () {
-    j = j - 1
-})
 function 燈 (num: number) {
     if (num % 5 == 0) {
         x = 4
@@ -34,5 +34,8 @@ function 燈 (num: number) {
     led.plot(x, y)
 }
 input.onButtonPressed(Button.B, function () {
-    j = j + 1
+    j = j - 1
+    if (j <= 0) {
+    	
+    }
 })
